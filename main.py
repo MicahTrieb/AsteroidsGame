@@ -4,15 +4,18 @@ from constants import *
 from asteroids import *
 from asteroidfield import *
 from circleshape import * 
+from shots import *
 clockObject = pygame.time.Clock()
 def main():
 	dt = 0
 	updatable = pygame.sprite.Group()
 	drawable = pygame.sprite.Group()
 	allAsteroids = pygame.sprite.Group()
+	allBullets = pygame.sprite.Group()
 	Asteroid.containers = (allAsteroids, updatable, drawable)
 	Player.containers = (updatable,drawable)
 	AsteroidField.containers = (updatable)
+	Shots.containers = (updatable,drawable,allBullets)
 	print("Starting asteroids!")
 	print(f"Screen width: {SCREEN_WIDTH}")
 	print(f"Screen height: {SCREEN_HEIGHT}")
